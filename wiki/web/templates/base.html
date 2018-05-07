@@ -15,10 +15,7 @@
 	</head>
 
 	<body>
-        <!--
-		<div class="navbar navbar-fixed-top">
-        -->
-		<div class="navbar navbar-light navbar-fixed-top default-color lighten-4">
+		<div class="navbar-light default-color lighten-4">
 			<div class="navbar-inner">
 				<div class="container">
 					<div class="row">
@@ -47,6 +44,76 @@
 				</div>
 			</div>
 		</div>
+
+
+
+    <div class="navbar-light default-color lighten-4">
+
+        <!-- Navbar brand -->
+        <a href="#" class="navbar-brand">{{ config.TITLE }}</a>
+
+		<!-- Collapse button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+				<a class="nav-link" href="{{ url_for('wiki.home') }}">
+                    <span class="sr-only">Home</span>
+				</a>
+            </li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('wiki.index') }}">Index</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('wiki.tags') }}">Tags</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('wiki.search') }}">Search</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('wiki.create') }}">New Page</a>
+			</li>
+
+			<ul class="pull-right">
+				{% if current_user.is_anonymous %}
+					<li class="nav-item"><a class="nav-link" href="{{ url_for('wiki.user_login') }}">Login</a></li>
+				{% else %}
+					<li class="nav-item"><a class="nav-link" href="{{ url_for('wiki.user_logout') }}">Logout</a></li>
+				{% endif %}
+			</ul>
+
+        </ul>
+
+        <!-- Links -->
+		<!--
+			<form class="form-inline">
+				<div class="md-form mt-0">
+					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+				</div>
+			</form>
+		-->
+    </div>
+    <!-- Collapsible content -->
+
+
+
+
+
+    </div>
+
+
 
 		<div class="container">
 			<div class="row">
