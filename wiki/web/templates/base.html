@@ -2,13 +2,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='pygments.css') }}">
+
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='prism.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mdb.min.css') }}">
+
 	</head>
 
 	<body>
+        <!--
 		<div class="navbar navbar-fixed-top">
+        -->
+		<div class="navbar-light default-color lighten-4">
 			<div class="navbar-inner">
 				<div class="container">
 					<div class="row">
@@ -78,7 +88,10 @@
 				document.write(unescape("%3Cscript src='{{ url_for('static', filename='jquery.min.js') }}' type='text/javascript'%3E%3C/script%3E"));
 			}
 		</script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
 		<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='mdb.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='prism.min.js') }}"></script>
 		<script type="text/javascript">
 			{% block postscripts %}
 			{% endblock postscripts %}
