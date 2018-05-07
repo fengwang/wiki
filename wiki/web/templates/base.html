@@ -16,73 +16,53 @@
 
 	<body>
 
-    <div class="navbar-light default-color lighten-4">
 
-        <!-- Navbar brand -->
+	<!--Navbar -->
+	<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+
         <a href="#" class="navbar-brand">{{ config.TITLE }}</a>
 
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-			aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
+		<div class="collapse navbar-collapse" id="navbarSupportedContent-3">
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
-
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-				<a class="nav-link" href="{{ url_for('wiki.home') }}">
-                    <span class="sr-only">Home</span>
-				</a>
-            </li>
-
-			<li class="nav-item">
-				<a class="nav-link" href="{{ url_for('wiki.index') }}">Index</a>
-			</li>
-
-			<li class="nav-item">
-				<a class="nav-link" href="{{ url_for('wiki.tags') }}">Tags</a>
-			</li>
-
-			<li class="nav-item">
-				<a class="nav-link" href="{{ url_for('wiki.search') }}">Search</a>
-			</li>
-
-			<li class="nav-item">
-				<a class="nav-link" href="{{ url_for('wiki.create') }}">New Page</a>
-			</li>
-
-			<ul class="pull-right">
-				{% if current_user.is_anonymous %}
-					<li class="nav-item"><a class="nav-link" href="{{ url_for('wiki.user_login') }}">Login</a></li>
-				{% else %}
-					<li class="nav-item"><a class="nav-link" href="{{ url_for('wiki.user_logout') }}">Logout</a></li>
-				{% endif %}
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link waves-effect waves-light" href="{{ url_for('wiki.home') }}">Home
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('wiki.index') }}">Index</a>
+				</li>
+				<li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('wiki.tags') }}">Tags</a>
+				</li>
+				<li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('wiki.search') }}">Search</a>
+				</li>
+				<li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('wiki.create') }}">New Page</a>
+				</li>
 			</ul>
 
-        </ul>
+			<ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    {% if current_user.is_anonymous %}
+                        <a class="nav-link" href="{{ url_for('wiki.user_login') }}">Login</a>
+                    {% else %}
+                        <a class="nav-link" href="{{ url_for('wiki.user_logout') }}">Logout</a>
+                    {% endif %}
+                </li>
+			</ul>
 
-        <!-- Links -->
-		<!--
-			<form class="form-inline">
-				<div class="md-form mt-0">
-					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-				</div>
-			</form>
-		-->
-    </div>
-    <!-- Collapsible content -->
+		</div>
+	</nav>
+	<!--/.Navbar -->
 
-
-
-
-
-    </div>
-
-
+    <div style="height: 40px"></div>
 
 		<div class="container">
 			<div class="row">
