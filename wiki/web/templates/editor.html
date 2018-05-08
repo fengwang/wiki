@@ -26,9 +26,9 @@ Wiki Editor
 	<div class="tab-pane active" id="editor">
 		<form method="post" class="form">
 			{{ form.hidden_tag() }}
-			{{ input(form.title, placeholder="Title", class="span7", autocomplete="off") }}
-			{{ input(form.body, placeholder="Markdown", class="span7", rows="20") }}
-			{{ input(form.tags, placeholder="Tags (comma separated)", class="span7", autocomplete="off") }}
+			{{ input(form.title, placeholder="Title", class="span10", autocomplete="off") }}
+			{{ input(form.body, placeholder="Markdown", class="span10", rows="20") }}
+			{{ input(form.tags, placeholder="Tags (comma separated)", class="span10", autocomplete="off") }}
 
     <div class="form-actions">
         <!--
@@ -40,6 +40,7 @@ Wiki Editor
             <button class="btn btn-success" type="submit">Save</button>
         </div>
         -->
+        <div style="height: 20px"></div>
         <section>
             <a href="{{ url_for('wiki.display', url=page.url) }}" class="btn btn-outline-danger waves-effect">Cancel</a>
             <a href="#preview" id="previewbtn" class="btn btn-outline-primary waves-effect">Preview</a>
