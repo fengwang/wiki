@@ -42,9 +42,29 @@ Wiki Editor
         -->
         <div style="height: 20px"></div>
         <section>
-            <a href="{{ url_for('wiki.display', url=page.url) }}" class="btn btn-outline-danger waves-effect">Cancel</a>
-            <a href="#preview" id="previewbtn" class="btn btn-outline-primary waves-effect">Preview</a>
-            <button type="button" class="btn btn-outline-success waves-effect" type="submit">Save</button>
+            <!--
+            <a href="{{ url_for('wiki.display', url=page.url) }}" class="btn btn-danger waves-effect">Cancel</a>
+            <a href="#preview" id="previewbtn" class="btn btn-success waves-effect">Preview</a>
+            <button type="button" class="btn btn-primary waves-effect" type="submit">Save</button>
+            -->
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th>
+                            <a href="{{ url_for('wiki.display', url=page.url) }}" class="btn btn-danger waves-effect">Cancel</a>
+                        </th>
+                        <th>
+                            <a href="#preview" id="previewbtn" class="btn btn-success waves-effect">Preview</a>
+                        </th>
+                        <th>
+                            <button type="button" class="btn btn-primary waves-effect" type="submit">Save</button>
+                        </th>
+                    </tr>
+                </thead>
+
+
+            </table>
         </section>
     </div>
 
@@ -54,6 +74,23 @@ Wiki Editor
 	<div class="tab-pane" id="preview"></div>
 </div>
 {% endblock content %}
+
+<!--
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+        </tr>
+    </thead>
+
+
+</table>
+-->
+
+
 
 <!--
 <section>
