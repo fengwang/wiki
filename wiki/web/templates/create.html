@@ -5,15 +5,13 @@
 
 <form method="POST" class="form-inline">
 
-    <p class="h4 text-center mb-4">Page Title</p>
-
     <div class="md-form">
         {{ form.hidden_tag() }}
-        {{ input(form.url, placeholder="Title of the new page", autocomplete="off") }}
+        {{ input(form.url, placeholder="Page Title", autocomplete="off") }}
     </div>
 
     <div class="text-center mt-3 mb-3">
-        <input class="submit_button btn default-gradient btn-block btn-rounded waves-effect waves-light" type="submit" value="Create">Create</button>
+        <button class="submit_button btn default-gradient btn-block btn-rounded waves-effect waves-light" type="submit" value="Create">Create</button>
     </div>
 
 </form>
