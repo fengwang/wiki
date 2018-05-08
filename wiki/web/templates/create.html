@@ -3,17 +3,19 @@
 {% block title %}Create a new page{% endblock title %}
 {% block content %}
 
+
 <form method="POST" class="form-inline">
+    <div class="mx-auto">
+        <div class="md-form mt-5">
+            {{ form.hidden_tag() }}
+            {{ input(form.url, placeholder="Page Title", autocomplete="off") }}
+        </div>
 
-    <div class="md-form">
-        {{ form.hidden_tag() }}
-        {{ input(form.url, placeholder="Page Title", autocomplete="off") }}
+        <div class="text-center mt-4 mb-4">
+            <button class="submit_button btn aqua-gradient btn-block btn-rounded waves-effect waves-light" type="submit" value="Create">Create</button>
+        </div>
     </div>
-
-    <div class="text-center mt-3 mb-3">
-        <button class="submit_button btn default-gradient btn-block btn-rounded waves-effect waves-light" type="submit" value="Create">Create</button>
-    </div>
-
 </form>
+
 {% endblock content %}
 
