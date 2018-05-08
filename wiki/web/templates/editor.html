@@ -43,11 +43,25 @@ Wiki Editor
         </div>
         -->
         <table>
-            <div class="d-flex justify-content-around">
-                <a href="{{ url_for('wiki.display', url=page.url) }}" class="btn btn-danger waves-effect">Cancel</a>
-                <a href="#preview" id="previewbtn" class="btn btn-success waves-effect">Preview</a>
-                <button type="button" class="btn btn-primary waves-effect" type="submit">Save</button>
-            </div>
+            <thead>
+                <tr>
+                    <th>
+                        <div class="d-flex justify-content-around">
+                            <a href="{{ url_for('wiki.display', url=page.url) }}" class="btn btn-danger waves-effect">Cancel</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="d-flex justify-content-around">
+                            <a href="#preview" id="previewbtn" class="btn btn-success waves-effect">Preview</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="d-flex justify-content-around">
+                            <button type="button" class="btn btn-primary waves-effect" type="submit">Save</button>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
         </table>
     </div>
 
