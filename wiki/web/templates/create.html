@@ -2,13 +2,20 @@
 
 {% block title %}Create a new page{% endblock title %}
 {% block content %}
+
 <form method="POST" class="form-inline">
-	{{ form.hidden_tag() }}
-	{{ input(form.url, placeholder="URL of the new page", autocomplete="off") }}
-	<input type="submit" class="btn btn-success" value="Create">
+
+    <p class="h4 text-center mb-4">Page Title</p>
+
+    <div class="md-form">
+        {{ form.hidden_tag() }}
+        {{ input(form.url, placeholder="Title of the new page", autocomplete="off") }}
+    </div>
+
+    <div class="text-center mt-3 mb-3">
+        <input class="submit_button btn default-gradient btn-block btn-rounded waves-effect waves-light" type="submit" value="Create">Create</button>
+    </div>
+
 </form>
 {% endblock content %}
 
-{% block sidebar %}
-<p class="alert alert-success">Thank you for creating new content!</p>
-{% endblock sidebar %}
