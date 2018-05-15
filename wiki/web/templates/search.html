@@ -8,7 +8,30 @@
 {% endif %}
 {% endblock title %}
 
+
+
 {% block content %}
+
+<div class="row">
+	<div class="span10 offset1">
+		<form class="form-inline well" method="POST">
+			{{ form.hidden_tag() }}
+			
+			<input class="form-control mb-2 mr-sm-2" autocomplete="off" id="term" name="term"  placeholder="Search (regex supported)" placeholder="Search for.. (regex accepted)" type="text" value="">
+			
+			<div class="form-check mb-2 mr-sm-2">
+				<input class="form-check-input" type="checkbox" id="ignore_case" name="ignore_case" value="y" checked="checked">
+				<label class="form-check-label" for="ignore_case">
+					Ignore Case
+				</label>
+			</div>
+			
+			<button type="submit" class="btn btn-info"><i class="fa fa-search mr-1" aria-hidden="true"></i> Search</button>
+		</form>
+	</div>
+</div>
+
+<!--
 <div class="row">
 	<div class="span8 offset1">
 		<form class="form-inline well" method="POST">
@@ -19,17 +42,21 @@
 		</form>
 	</div>
 </div>
+-->
+
+<div style="height: 40px"></div>
 
 {% if search %}
 	{% if results %}
-		<ul>
+		<ul class="list-group">
 			{% for result in results %}
-				<li><a href="{{ url_for('wiki.display', url=result.url) }}">{{ result.title }}</a></li>
+				<li class="list-group-item"><a href="{{ url_for('wiki.display', url=result.url) }}">{{ result.title }}</a></li>
 			{% endfor %}
 		</ul>
 	{% else %}
 		<p>No results for your search.</p>
 	{% endif %}
 {% endif %}
+
 {% endblock content %}
 
