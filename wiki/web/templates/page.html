@@ -1,10 +1,31 @@
+<!--  Page Template   -->
+
 {% extends "base.html" %}
 
 {% block title %}
 	{{ page.title }}
 {% endblock title %}
 
+
+
+<ul class="nav nav-tabs nav-stacked">
+	<li><a href="{{ url_for('wiki.edit', url=page.url) }}">Edit</a></li>
+  <li><a href="{{ url_for('wiki.move', url=page.url) }}">Move</a></li>
+  <li><a href="#confirmDelete" data-toggle="modal" class="text-error">Delete</a></li>
+</ul>
+
+
 {% block content %}
+
+
+    <section>
+		<div class="row justify-content-end">
+			<a href="#confirmDelete" data-toggle="modal"  class="btn btn-outline-danger btn-sm waves-effect waves-light"><i class="fa fa-bomb mr-1"></i> Delete</a>
+			<a href="{{ url_for('wiki.edit', url=page.url) }}" class="btn btn-outline-default btn-sm waves-effect waves-light">Edit <i class="fa fa-edit ml-1"></i></a>
+		</div>
+	</section>
+
+
   <div id="confirmDelete" class="modal hide fade" aria-hidden="true">
     <div class="modal-header">
       <h3>Are you sure?</h3>
@@ -19,6 +40,8 @@
   </div>
 	{{ page }}
 {% endblock content %}
+
+
 
 {% block sidebar %}
 {% if page.tags %}

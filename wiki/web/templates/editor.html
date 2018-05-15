@@ -30,79 +30,36 @@ Wiki Editor
 			{{ input(form.body, placeholder="Markdown", class="span10", rows="20") }}
 			{{ input(form.tags, placeholder="Tags (comma separated)", class="span10", autocomplete="off") }}
 
-    <div style="height: 20px"></div>
+			<div style="height: 20px"></div>
 
-    <div class="form-actions">
-        <!--
-        <div class="pull-left">
-          <a class="btn" href="#preview" id="previewbtn">Preview</a>
-        </div>
-        <div class="pull-right">
-            <a class="btn" href="{{ url_for('wiki.display', url=page.url) }}">Cancel</a>
-            <button class="btn btn-success" type="submit">Save</button>
-        </div>
-        -->
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>
-                        <div class="d-flex justify-content-around">
-                            <a href="{{ url_for('wiki.display', url=page.url) }}" class="btn btn-danger waves-effect">Cancel</a>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="d-flex justify-content-around">
-                            <a href="#preview" id="previewbtn" class="btn btn-success waves-effect">Preview</a>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="d-flex justify-content-around">
-                            <button type="button" class="btn btn-primary waves-effect" type="submit">Save</button>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-
-
+			<div class="form-actions">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>
+								<div class="d-flex justify-content-around">
+									<a href="{{ url_for('wiki.display', url=page.url) }}" class="btn btn-danger waves-effect">Cancel</a>
+								</div>
+							</th>
+							<th>
+								<div class="d-flex justify-content-around">
+									<a href="#preview" id="previewbtn" class="btn btn-success waves-effect">Preview</a>
+								</div>
+							</th>
+							<th>
+								<div class="d-flex justify-content-around">
+									<button class="btn btn-primary waves-effect" type="submit">Save</button>
+								</div>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
 		</form>
 	</div>
 	<div class="tab-pane" id="preview"></div>
 </div>
 {% endblock content %}
-
-<!--
-<table class="table">
-
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-        </tr>
-    </thead>
-
-
-</table>
--->
-
-
-
-<!--
-<section>
-
-    <button type="button" class="btn btn-outline-primary waves-effect">Primary</button>
-    <button type="button" class="btn btn-outline-default waves-effect">Default</button>
-    <button type="button" class="btn btn-outline-secondary waves-effect">Secondary</button>
-    <button type="button" class="btn btn-outline-success waves-effect">Success</button>
-    <button type="button" class="btn btn-outline-info waves-effect">Info</button>
-    <button type="button" class="btn btn-outline-warning waves-effect">Warning</button>
-
-</section>
--->
-
-
 
 <!--
 <div class="tab-content">
@@ -111,40 +68,38 @@ Wiki Editor
 			<input id="csrf_token" name="csrf_token" type="hidden" value="ImViODA3NzBhYTk3MzI4MTI4YjA0MDM1MDFmMjdjYTRlZGQ0OGMxZTYi.DdNa-Q.ajiq0VG6b3CWtjilmvSliEogvT8">
 			<div class="control-group ">
 
-			<label for="title" class="control-label"></label>
-			<div class="controls">
-				<input autocomplete="off" class="span7" id="title" name="title" placeholder="Title" type="text" value="">
-
+				<label for="title" class="control-label"></label>
+				<div class="controls">
+					<input autocomplete="off" class="span7" id="title" name="title" placeholder="Title" type="text" value="">
+				</div>
 			</div>
-
-	</div>
+			
+			<div class="control-group ">
+				<label for="body" class="control-label"></label>
+				<div class="controls">
+					<textarea class="span7" id="body" name="body" placeholder="Markdown" rows="20"></textarea>
+				</div>
+			</div>
+			
 			<div class="control-group ">
 
-			<label for="body" class="control-label"></label>
-			<div class="controls">
-				<textarea class="span7" id="body" name="body" placeholder="Markdown" rows="20"></textarea>
+				<label for="tags" class="control-label"></label>
+				<div class="controls">
+					<input autocomplete="off" class="span7" id="tags" name="tags" placeholder="Tags (comma separated)" type="text" value="">
+				</div>
 
 			</div>
-
-	</div>
-			<div class="control-group ">
-
-			<label for="tags" class="control-label"></label>
-			<div class="controls">
-				<input autocomplete="off" class="span7" id="tags" name="tags" placeholder="Tags (comma separated)" type="text" value="">
-
-			</div>
-
-	</div>
+			
 			<div class="form-actions">
-        <div class="pull-left">
-          <a class="btn" href="#preview" id="previewbtn">Preview</a>
-        </div>
+				<div class="pull-left">
+					<a class="btn" href="#preview" id="previewbtn">Preview</a>
+				</div>
 				<div class="pull-right">
-          <a class="btn" href="/">Cancel</a>
+					<a class="btn" href="/">Cancel</a>
 					<button class="btn btn-success" type="submit">Save</button>
 				</div>
 			</div>
+			
 		</form>
 	</div>
 	<div class="tab-pane" id="preview"></div>
